@@ -1,12 +1,18 @@
 import React from 'react';
 
-const Card = ({image, text}) => {
+const Card = ({id, name, sprite, cardPressHandler}) => {
+
+  const clickHandler = () => {
+    cardPressHandler(id);
+  }
 
   return (
-    <div className="card">
-      <img className='card-img' src="" alt="" />
-      <p className='card-text'></p>
+    <div className="card" onClick={clickHandler}>
+      <img className='card-img' src={sprite} alt={name} />
+      <p className='card-text'>{name}</p>
     </div>
   )
 
 }
+
+export default Card;

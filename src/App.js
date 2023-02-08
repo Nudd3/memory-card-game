@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import Header from './components/Header'
 import Main from './components/Main';
 import React, { useState } from 'react';
@@ -16,7 +16,7 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className="app">
       <Header currentScore={currentScore} highScore={highScore}/>
       <Main />
     </div>

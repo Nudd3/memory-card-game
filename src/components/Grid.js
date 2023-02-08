@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Card from './Card'
+const Grid = ({pokemons, cardPressHandler}) => {
 
-const Grid = props => {
-
-  const cardInfo = [
-
-  ]
-
-  const [grid, setGrid] = useState(Array(9).fill(null))
-  
-  const populateGrid = () => {
-    
-  }
+  return(
+    <div className="grid">
+      {pokemons?.map((pokemon) => {
+        return <Card key={pokemon.id} id={pokemon.id} name={pokemon.name} sprite={pokemon.sprite} cardPressHandler={cardPressHandler}/>
+      })}
+    </div>
+  )
 
 }
 
 export default Grid;
+
+// {this.props.experiences?.map((experience) => {
