@@ -33,14 +33,17 @@ const Main = (props) => {
     return pokemonArray;
   };
 
-  const cardPressHandler = (id) => {
-    if(rememberedCards.includes(id)) {
-      console.log('yoo')
+  // Adds the name of the pressed pokemon to the rememberedCards array
+  // If the pokemon has already been pressed, reset the game
+  const cardPressHandler = (name) => {
+    if(rememberedCards.includes(name)) {
+      // highscore check
+      // reset game
+      console.log('Card already clicked');
+    } else {
+      // increase score
+      setRememberedCards(rememberedCards => [...rememberedCards, name]);
     }
-    const cardToAdd = pokemonsArray.filter((card) => card.id === id);
-    console.log(cardToAdd);
-    setRememberedCards(rememberedCards => [...rememberedCards, cardToAdd]);
-    console.log(rememberedCards)
     
   }
 

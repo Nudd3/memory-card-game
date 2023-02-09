@@ -1,17 +1,20 @@
 import React from 'react';
-import Card from './Card'
-const Grid = ({pokemons, cardPressHandler}) => {
-
-  return(
-    <div className="grid">
+import Card from './Card';
+const Grid = ({ pokemons, cardPressHandler }) => {
+  return (
+    <div className='grid'>
       {pokemons?.map((pokemon) => {
-        return <Card key={pokemon.id} id={pokemon.id} name={pokemon.name} sprite={pokemon.sprite} cardPressHandler={cardPressHandler}/>
+        return (
+          <Card
+            key={pokemon.id}
+            name={pokemon.name}
+            sprite={pokemon.sprite}
+            cardPressHandler={cardPressHandler}
+          />
+        );
       })}
     </div>
-  )
-
-}
+  );
+};
 
 export default Grid;
-
-// {this.props.experiences?.map((experience) => {

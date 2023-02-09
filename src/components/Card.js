@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Card = ({id, name, sprite, cardPressHandler}) => {
+const Card = ({name, sprite, cardPressHandler}) => {
 
   const clickHandler = () => {
-    cardPressHandler(id);
+    cardPressHandler(name);
   }
 
   return (
