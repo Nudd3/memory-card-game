@@ -17,6 +17,14 @@ const Main = (props) => {
     createCards();
   }, [])
 
+  // useEffect(() => {
+  //   console.log(rememberedCards);
+  // }, [rememberedCards])
+
+  useEffect(() => {
+    shuffle(pokemonsArray);
+  })
+
   const getPokemons = async () => {
     const pokemonArray = [];
 
