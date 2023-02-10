@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +7,13 @@
 
 body {
   background-color: #eee;
+  // font-family: 'Indie Flower', cursive;
+  font-family: 'Special Elite', cursive, sans-serif;
 }
 
 img {
   width: 190px;
   height: 200px;
-  border: 1px solid red
 }
 
 .app {
@@ -31,32 +33,6 @@ img {
   gap: 2em;
 }
 
-.card {
-  // width: 200px;
-  height: 250px;
-  border: 1px solid green;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  background-color: #ddd;
-
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
-.card-text {
-  width: 100%;
-  border: 1px solid blue;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
 .main {
   flex: 1;
   min-width: 600px;
@@ -67,15 +43,13 @@ img {
 }
 
 .grid {
-  width: 100%;
+  width: 80%;
   display: grid;
   align-items: center;
   justify-items: center;
   
   margin: 0 auto;
-  display: grid;
   gap: 1rem;
-  // gap: 2rem;
 
   @media (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
@@ -101,4 +75,29 @@ img {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
   }
+}
+
+.card {
+  width: 200px;
+  height: 250px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #ddd;
+
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}
+
+.card-text {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
 }
