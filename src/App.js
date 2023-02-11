@@ -9,20 +9,30 @@ const App = () => {
 
   const currentScoreUpdater = () => {
     setCurrentScore(currentScore => currentScore + 1);
+
+    if(currentScore > highScore) {
+      highScoreUpdater();
+    }
   }
 
   const highScoreUpdater = () => {
     setHighScore(currentScore);
   }
 
+  const resetScore = () => {
+    setCurrentScore(0)
+  }
+
   useEffect(() => {
-    console.log(currentScore)
-  }, [currentScore]);
+    if(currentScore > highScore) {
+      highScoreUpdater();
+    }
+  })
 
   return (
     <div className="app">
       <Header currentScore={currentScore} highScore={highScore}/>
-      <Main currentScoreUpdater={currentScoreUpdater}/>
+      <Main currentScoreUpdater={currentScoreUpdater} resetScore={resetScore}/>
     </div>
   );
 }

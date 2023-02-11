@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Grid from './Grid';
-const Main = ({currentScoreUpdater}) => {
+const Main = ({currentScoreUpdater, resetScore}) => {
   const NUMBER_OF_CARDS = 12; // Possibility
 
   const [pokemonsArray, setPokemonsArray] = useState([]);
@@ -43,15 +43,20 @@ const Main = ({currentScoreUpdater}) => {
   // If the pokemon has already been pressed, reset the game
   const cardPressHandler = (name) => {
     if(rememberedCards.includes(name)) {
-      // highscore check
-      // reset game
+      resetGame();
       console.log('Card already clicked');
     } else {
       // increase score
       currentScoreUpdater();
+      // remember clicked card
       setRememberedCards(rememberedCards => [...rememberedCards, name]);
     }
     
+  }
+
+  const resetGame = () => {
+    resetScore();
+    setRememberedCards([]);
   }
 
   function shuffle(array) {
