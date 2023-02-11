@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Grid from './Grid';
-const Main = (props) => {
+const Main = ({currentScoreUpdater}) => {
   const NUMBER_OF_CARDS = 12; // Possibility
 
   const [pokemonsArray, setPokemonsArray] = useState([]);
   const [rememberedCards, setRememberedCards] = useState([]);
-  const [currentScore, setCurrentScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
 
 
   useEffect(() => {
@@ -50,6 +48,7 @@ const Main = (props) => {
       console.log('Card already clicked');
     } else {
       // increase score
+      currentScoreUpdater();
       setRememberedCards(rememberedCards => [...rememberedCards, name]);
     }
     
