@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Grid from './Grid';
 const Main = ({currentScoreUpdater, resetScore}) => {
-  const NUMBER_OF_CARDS = 12; // Possibility
+  const NUMBER_OF_CARDS = 14; // Possibility
 
   const [pokemonsArray, setPokemonsArray] = useState([]);
   const [rememberedCards, setRememberedCards] = useState([]);
@@ -14,10 +14,6 @@ const Main = ({currentScoreUpdater, resetScore}) => {
 
     createCards();
   }, [])
-
-  // useEffect(() => {
-  //   console.log(rememberedCards);
-  // }, [rememberedCards])
 
   useEffect(() => {
     shuffle(pokemonsArray);
@@ -47,6 +43,7 @@ const Main = ({currentScoreUpdater, resetScore}) => {
       console.log('Card already clicked');
     } else {
       // increase score
+      // update highscore if necessary
       currentScoreUpdater();
       // remember clicked card
       setRememberedCards(rememberedCards => [...rememberedCards, name]);
