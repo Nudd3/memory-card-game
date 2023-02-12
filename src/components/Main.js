@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Grid from './Grid';
-const Main = ({currentScoreUpdater, resetScore}) => {
-  const NUMBER_OF_CARDS = 14; // Possibility
+const Main = ({ currentScoreUpdater, resetScore }) => {
+  const NUMBER_OF_CARDS = 12;
 
   const [pokemonsArray, setPokemonsArray] = useState([]);
   const [rememberedCards, setRememberedCards] = useState([]);
 
-
   useEffect(() => {
-    const createCards = async() => {
+    const createCards = async () => {
       setPokemonsArray(shuffle(await getPokemons()));
-    }
+    };
 
     createCards();
-  }, [])
+  }, []);
 
   useEffect(() => {
     shuffle(pokemonsArray);
-  })
+  });
 
   const getPokemons = async () => {
     const pokemonArray = [];
@@ -35,48 +34,45 @@ const Main = ({currentScoreUpdater, resetScore}) => {
     return pokemonArray;
   };
 
-  // Adds the name of the pressed pokemon to the rememberedCards array
-  // If the pokemon has already been pressed, reset the game
   const cardPressHandler = (name) => {
-    if(rememberedCards.includes(name)) {
+    if (rememberedCards.includes(name)) {
       resetGame();
       console.log('Card already clicked');
     } else {
-      // increase score
-      // update highscore if necessary
       currentScoreUpdater();
-      // remember clicked card
-      setRememberedCards(rememberedCards => [...rememberedCards, name]);
+
+      setRememberedCards((rememberedCards) => [...rememberedCards, name]);
     }
-    
-  }
+  };
 
   const resetGame = () => {
     resetScore();
     setRememberedCards([]);
-  }
+  };
 
   function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
+    let currentIndex = array.length,
+      randomIndex;
+
     // While there remain elements to shuffle.
     while (currentIndex !== 0) {
-  
       // Pick a remaining element.
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex--;
-  
+
       // And swap it with the current element.
       [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
+        array[randomIndex],
+        array[currentIndex],
+      ];
     }
-  
+
     return array;
   }
 
   return (
     <main className='main'>
-      <Grid pokemons={pokemonsArray} cardPressHandler={cardPressHandler}/>
+      <Grid pokemons={pokemonsArray} cardPressHandler={cardPressHandler} />
     </main>
   );
 };
