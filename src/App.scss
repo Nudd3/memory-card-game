@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+$small-screen: 500px;
+
 * {
   margin: 0;
   padding: 0;
@@ -9,22 +12,18 @@ body {
   background-color: #eee;
   // font-family: 'Indie Flower', cursive;
   font-family: 'Special Elite', cursive, sans-serif;
+  overflow-x: hidden;
 }
 
-img {
-  width: 190px;
-  height: 200px;
-}
+// #root {
+//   min-height: 100vh;
+//   min-width: 100vw; 
+// }
 
-#root {
-  min-height: 100vh;
-  min-width: 100vw; 
-}
-
-.app {
-  min-height: 100vh;
-  min-width: 100vw;
-}
+// .app {
+//   min-height: 100vh;
+//   min-width: 100vw;
+// }
 
 .header {
   
@@ -33,20 +32,36 @@ img {
   justify-content: space-around;
   align-items: center;
   padding: 1rem 0 1rem 0;
-}
-.title-section {
-  font-size: 2.5rem;
+  height: 78px;
 
-}
-.score-section {
-  display: flex;
-  gap: 2rem;
-  font-size: 1.5rem;
+  @media (max-width: $small-screen) {
+    justify-content: space-around;
+    align-items: space;
+    height: 50px;
+  }
+
+  .title-section {
+    font-size: 2.5rem;
+  
+    @media (max-width: $small-screen) {
+      font-size: 1.3rem;
+    }
+  }
+  .score-section {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+
+    @media (max-width: $small-screen) {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+    }
+  }
 }
 
 .main {
-  flex: 1;
-  min-width: 600px;
   padding: 2rem 0 2rem 0;
   display: flex;
   align-items: center;
@@ -61,6 +76,12 @@ img {
   grid-template-columns: repeat( auto-fit, 225px);
   margin: 0 auto;
   gap: 1rem;
+
+  @media (max-width: $small-screen) {
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 1rem;
+  }
 
 }
 
@@ -81,10 +102,30 @@ img {
     cursor: pointer;
     transform: scale(1.05);
   }
-}
 
-.card-text {
-  width: 100%;
-  text-align: center;
-  font-size: 1.5rem;
+  @media (max-width: $small-screen) {
+    width: 75px;
+    height: 100px;
+    gap: 0;
+  }
+
+  .card-img {
+    width: 190px;
+    height: 200px;
+
+    @media (max-width: $small-screen) {
+      width: 60px;
+      height: 85px;
+    }
+  }
+
+  .card-text {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+
+    @media (max-width: $small-screen) {
+      font-size: 0.7rem;
+    }
+  }
 }
