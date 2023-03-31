@@ -1,13 +1,28 @@
-# Memory Card 
+# Memory Card
+
+> [Live Link](https://nudd3.github.io/memory-card-game/) 
+> [Code](https://github.com/Nudd3/memory-card-game)
 
 ## About
-This is a memory game where the player is faced with 12 cards and is to click all of them, without clicking one of the already clicked. If the player presses a card that has already been pressed, the game will reset.
+
+Memory game where the player is faced with 12 cards and is tasks to click on all of them. After a card is pressed the layout is randomly shuffled and if ther player presses an already pressed card, the game is reset. Goal is to have pressed each and every card once.
+
+This project has responsive design to fit different devices.
+
+Main objective for this project was to improve my skills in React as well as using APIs. For this project I've used [PokeAPI](https://pokeapi.co).
+
+## Screenshot
+
+![Screenshot of page](./src/screenshots/screenshot.png)
 
 ## Technologies
-* HTML
-* CSS/SCSS
-* JavaScript
-* React
 
-## Future addings
-An increase of difficulty once the player has correctly pressed all the cards. At the following render there could be more cards on the page and the player now has to do the same thing again. Because currently the max score a player could get is 12. 
+- HTML
+- CSS/SCSS
+- JavaScript
+- React
+- PokeAPI
+
+## Potential Improvements
+
+- Difficulty Increase once game is done
