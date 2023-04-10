@@ -1,7 +1,6 @@
 # Memory Card
 
 > [Live Link](https://nudd3.github.io/memory-card-game/) 
-> [Code](https://github.com/Nudd3/memory-card-game)
 
 ## About
 
